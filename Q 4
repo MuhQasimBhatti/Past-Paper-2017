@@ -1,0 +1,56 @@
+//using structure define data of student as name roll no n marks in three sbjects and display the students which are fail in more than 1 sject
+#include<iomanip>
+#include<iostream>
+using namespace std;
+
+struct d
+{
+	int rollno;
+	char name[20];
+	int marks[3];
+};
+
+int main()
+{
+	d A[5];
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Enter Roll no" << endl;
+		cin >> A[i].rollno;
+		cin.ignore();
+		cout << "Enter Name" << endl;
+		cin >> A[i].name;
+		cout << "Enter Marks Of" << endl;
+		for (int j = 0; j < 3; j++)
+		{
+			cout << j+1<< " subject= ";
+			cin >> A[i].marks[j];
+		}
+	}
+	cout << endl;
+	cout << "Students which are fail" << endl;
+	cout<<setw(10)<<"Roll No."<<setw(15)<<"Name"<<endl;
+	for(int i=0;i<5;i++)
+		for (int j = 0; j < 1; j++)
+		{
+			if (A[i].marks[j] < 40 && A[i].marks[j + 1] < 40)
+			{
+				cout << setw(10) << A[i].rollno
+					<< setw(20) << A[i].name
+				<< endl;
+			}
+			else if (A[i].marks[j] < 40 && A[i].marks[j + 2] < 40)
+			{
+				cout << setw(10) << A[i].rollno
+					<< setw(20) << A[i].name
+				<< endl;
+			}
+			else if (A[i].marks[j+1] < 40 && A[i].marks[j + 2] < 40)
+			{
+				cout << setw(10) << A[i].rollno
+					<< setw(20) << A[i].name
+					<< endl;
+			}
+		}  
+}
