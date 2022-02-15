@@ -29,8 +29,7 @@ int main()
 			else if ((i + j) == 2 && matrix[i][j] >= 0)
 				rsum += matrix[i][j];
 		}
-	cout << "lsum" << lsum << endl;
-	cout << "rsum" << rsum << endl;
+
 	cout << lsum + rsum << endl;
 
 
